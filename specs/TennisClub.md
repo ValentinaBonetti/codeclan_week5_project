@@ -1,4 +1,4 @@
-### TennisClub
+# TennisClub
 
 A local tennis club has asked you to build a piece of software to help them to manage memberships, and register members for classes and book courts.
 
@@ -171,6 +171,7 @@ _So that I can manage members participating to the adult ballot (not available t
 **Acceptance Criteria:** Club managers will be able to assign junior members that opted in to the junior Wimbledon ballot <br />
 
 
+## User Stories - Further ideas
 
 
 #### Classes should have a maximum capacity
