@@ -35,7 +35,7 @@ _So that I can go to that class_<br />
 
 #### View all my class bookings
 
-_As a tennis club member<br />
+_As a tennis club member_<br />
 _I want to view all the classes that I have booked_<br />
 _So that I don't forget to go_<br />
 
@@ -46,7 +46,7 @@ _So that I don't forget to go_<br />
 
 #### Manage memberships
 
-_As a tennis club manager_ <br />
+_As a tennis club manager_<br />
 _I want to check/update the list of members_<br />
 _So that I am storing up-to-date information about members_<br />
 
@@ -80,14 +80,14 @@ _So that I can see which classes are going to be busy_<br />
 #### Book tennis court
 
 _As a tennis club member_<br />
-_I want to book a tennis court<br />
+_I want to book a tennis court_<br />
 _So that I'm sure the court is free for me to use_<br />
 
 **Acceptance Criteria:** Club members should be able to book courts<br />
 
 #### View all my court bookings
 
-_As a tennis club member<br />
+_As a tennis club member_<br />
 _I want to view all the courts that I have booked_<br />
 _So that I don't forget to go and play_<br />
 
@@ -182,3 +182,17 @@ _So that the class can't be over-booked_<br />
 
 **Acceptance Criteria:** Club managers should be able to give each class a maximum capacity<br />
 **Acceptance Criteria:** Club managers should not be able to assign members to a class that is already full. (At capacity)
+
+
+#### Classes should taught by a the coach
+
+_As a tennis club manager_<br />
+_I want to be able to assign a class to a coach_<br />
+_So that I keep track of worked hours_<br />
+
+**Acceptance Criteria:** Club managers should be able to assign each class to a coach<br />
+**Acceptance Criteria:** Coaches should have a coaching qualification and a police check validity<br />
+**Acceptance Criteria:** Coaches should have earning field and make money for each class depending on qualification<br />
+
+
+
