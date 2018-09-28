@@ -167,7 +167,7 @@ _I want to be able to mark members as "opted-in for Wimbledon ballot"_<br />
 _So that I can manage members participating to the adult ballot (not available to students) and junior ballot_<br />
 
 **Acceptance Criteria:** Club managers will be able to assign Wimbledon opt-in option to members<br />
-**ACceptance Criteria:** Club managers will be able to assign full members that opted in to the adult Wimbledon ballot <br />
+**Acceptance Criteria:** Club managers will be able to assign full members that opted in to the adult Wimbledon ballot <br />
 **Acceptance Criteria:** Club managers will be able to assign junior members that opted in to the junior Wimbledon ballot <br />
 
 
@@ -184,7 +184,7 @@ _So that the class can't be over-booked_<br />
 **Acceptance Criteria:** Club managers should not be able to assign members to a class that is already full. (At capacity)
 
 
-#### Classes should taught by a the coach
+#### Classes should taught by a coach
 
 _As a tennis club manager_<br />
 _I want to be able to assign a class to a coach_<br />
@@ -193,6 +193,3 @@ _So that I keep track of worked hours_<br />
 **Acceptance Criteria:** Club managers should be able to assign each class to a coach<br />
 **Acceptance Criteria:** Coaches should have a coaching qualification and a police check validity<br />
 **Acceptance Criteria:** Coaches should have earning field and make money for each class depending on qualification<br />
-
-
-
