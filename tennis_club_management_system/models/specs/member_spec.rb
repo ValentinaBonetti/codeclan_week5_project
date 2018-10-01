@@ -5,8 +5,8 @@ require_relative("../member")
 class TestMember < MiniTest::Test
 
   def setup
-     options = {"id" => 1, "first_name" => "Valentina", "last_name" => "Bonetti",
-       "membership_type" => "student", "date_of_birth" => "1979-03-02", "opt_in_Wimbledon" => true}
+     options = {"first_name" => "Valentina", "last_name" => "Bonetti",
+       "membership_type" => "student", "date_of_birth" => "1979-03-02", "opt_in_Wimbledon" => 1}
 
      @member01 = Member.new(options)
   end
@@ -33,7 +33,7 @@ class TestMember < MiniTest::Test
 
   def test_opt_in_Wimbledon()
     result = @member01.opt_in_Wimbledon()
-    assert_equal(true, result)
+    assert_equal(1, result)
   end
 
 
