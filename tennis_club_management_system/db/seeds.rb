@@ -1,4 +1,5 @@
 require_relative('../models/member')
+require_relative('../models/court')
 require("pry-byebug")
 
 Member.delete_all()
@@ -12,6 +13,10 @@ member01 = Member.new({
 })
 
 member01.save
+
+court01 = Court.new({"court_number" => 1})
+court01.save
+
 
 binding.pry
 nil
