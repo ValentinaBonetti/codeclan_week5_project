@@ -23,6 +23,7 @@ CREATE TABLE coaches (
   first_name VARCHAR(255),
   last_name VARCHAR(255),
   qualification VARCHAR(255),
+  date_of_birth DATE,
   wallet REAL
 );
 
