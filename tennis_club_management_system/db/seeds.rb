@@ -2,6 +2,7 @@ require_relative('../models/member')
 require_relative('../models/court')
 require_relative('../models/coach')
 require_relative('../models/tennisclass')
+require_relative('../models/booking')
 
 require("pry-byebug")
 
@@ -9,6 +10,7 @@ Member.delete_all()
 Court.delete_all()
 Coach.delete_all()
 Tennisclass.delete_all()
+Booking.delete_all()
 
 member01 = Member.new({
   "first_name" => "Valentina",
@@ -20,26 +22,35 @@ member01 = Member.new({
   member01.save
 
 
-  court01 = Court.new({"court_number" => 1})
-  court01.save
+court01 = Court.new({"court_number" => 1})
+court01.save
 
 
-  coach01 = Coach.new({"first_name" => "Julie",
+coach01 = Coach.new({"first_name" => "Julie",
     "last_name" => "Gordon",
     "qualification" => "LTA Level 5",
     "date_of_birth" => "1976-01-29"
     })
-    coach01.save
+coach01.save
 
 
-    tennisclass01 = Tennisclass.new({"name" => "Cardio tennis",
-      "class_date" => "2018-10-29",
-      "class_time" => "12:00",
-      "class_duration" => 2,
-      "court_id" => court01.id,
-      "coach_id" => coach01.id})
-      tennisclass01.save
+tennisclass01 = Tennisclass.new({"name" => "Cardio tennis",
+    "class_date" => "2018-10-29",
+    "class_time" => "12:00",
+    "class_duration" => "2:00",
+    "court_id" => court01.id,
+    "coach_id" => coach01.id})
+tennisclass01.save
 
 
-      binding.pry
-      nil
+booking01 = Booking.new({"member_id" => member01.id,
+   "tennis_class_id" => tennisclass01.id,
+   "court_id" => court01.id,
+   "court_booking_date" => "2018-10-05",
+   "court_booking_time" => "12:00",
+   "court_booking_duration" => "2:00"})
+booking01.save
+
+
+  binding.pry
+  nil

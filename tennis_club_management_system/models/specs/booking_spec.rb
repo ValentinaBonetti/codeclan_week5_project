@@ -32,7 +32,7 @@ class TestBooking < MiniTest::Test
     @tennisclass01 = Tennisclass.new({"name" => "Cardio tennis",
           "class_date" => "2018-10-29",
           "class_time" => "12:00",
-          "class_duration" => 2,
+          "class_duration" => "2:00",
           "court_id" => @court01.id,
           "coach_id" => @coach01.id})
     @tennisclass01.save
@@ -42,7 +42,7 @@ class TestBooking < MiniTest::Test
        "court_id" => @court01.id,
        "court_booking_date" => "2018-10-05",
        "court_booking_time" => "12:00",
-       "court_booking_duration" => 2})
+       "court_booking_duration" => "2:00"})
     @booking01.save
 
   end
