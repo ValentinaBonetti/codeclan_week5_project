@@ -12,8 +12,8 @@ class Tennisclass
     @class_date = options['class_date']
     @class_time = options['class_time']
     @class_duration = options['class_duration']
-    @court_id = options['court_id']
-    @coach_id = options['coach_id']
+    @court_id = options['court_id'].to_i
+    @coach_id = options['coach_id'].to_i
   end
 
   def save()
