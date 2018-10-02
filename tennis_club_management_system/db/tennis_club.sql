@@ -1,4 +1,5 @@
-DROP TABLE bookings;
+DROP TABLE court_bookings;
+DROP TABLE class_bookings;
 DROP TABLE tennis_classes;
 DROP TABLE coaches;
 DROP TABLE courts;
@@ -37,10 +38,19 @@ CREATE TABLE tennis_classes (
   coach_id INT8 REFERENCES coaches(id) ON DELETE CASCADE
 );
 
-CREATE TABLE bookings (
+CREATE TABLE class_bookings (
   id SERIAL8 PRIMARY KEY,
   member_id INT8 REFERENCES members(id) ON DELETE CASCADE,
   tennis_class_id INT8 REFERENCES tennis_classes(id) ON DELETE CASCADE,
+  court_id INT8 REFERENCES courts(id) ON DELETE CASCADE,
+  booking_date DATE,
+  booking_time TIME,
+  booking_duration INTERVAL HOUR
+);
+
+CREATE TABLE court_bookings (
+  id SERIAL8 PRIMARY KEY,
+  member_id INT8 REFERENCES members(id) ON DELETE CASCADE,
   court_id INT8 REFERENCES courts(id) ON DELETE CASCADE,
   booking_date DATE,
   booking_time TIME,

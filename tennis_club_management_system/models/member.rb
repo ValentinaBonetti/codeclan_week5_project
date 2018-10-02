@@ -53,7 +53,16 @@ class Member
   end
 
   def my_bookings()
-    sql = "SELECT b.* FROM bookings b INNER JOIN members ON b.member_id = members.id
+    sql = "SELECT b.* FROM class_bookings b INNER JOIN members ON b.member_id = members.id
+         WHERE members.id = $1"
+    values = [@id]
+    my_bookings_hash = SqlRunner.run(sql,values)
+    my_bookings = my_bookings_hash.map {|booking| Booking.new(booking)}
+    return my_bookings
+  end
+
+  def my_court_bookings()
+    sql = "SELECT b.* FROM court_bookings b INNER JOIN members ON b.member_id = members.id
          WHERE members.id = $1"
     values = [@id]
     my_bookings_hash = SqlRunner.run(sql,values)

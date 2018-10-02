@@ -6,6 +6,7 @@ require_relative( '../models/coach.rb' )
 require_relative( '../models/court.rb' )
 require_relative( '../models/tennisclass.rb' )
 require_relative( '../models/booking.rb' )
+require_relative( '../models/courtbooking.rb' )
 also_reload( '../models/*' )
 
 get '/members' do
@@ -31,17 +32,20 @@ get '/members/:id/courts' do
 end
 
 get '/members/:id/post' do
-  booking = Booking.new({"member_id" => params[:id],
+  @member = Member.find_by_id(params[:id])
+  booking = Courtbooking.new({"member_id" => params[:id],
      "court_id" => params[:court_id],
      "booking_date" => params[:booking_date],
      "booking_time" => params[:booking_time],
      "booking_duration" => params[:booking_duration]})
   booking.save
+  redirect to("/members/#{@member.id}/index")
 end
 
 get '/members/:id/bookings' do
   @member = Member.find_by_id(params[:id])
   @mybookings = @member.my_bookings
+  @mycourtbookings = @member.my_court_bookings
   erb(:"members/bookings")
 end
 
