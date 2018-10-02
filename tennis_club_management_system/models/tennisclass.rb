@@ -7,7 +7,7 @@ class Tennisclass
                 :court_id, :coach_id
 
   def initialize(options)
-    @id = options['if'].to_i if options['id']
+    @id = options['id'].to_i if options['id']
     @name = options['name']
     @class_date = options['class_date']
     @class_time = options['class_time']
@@ -63,6 +63,13 @@ class Tennisclass
     tennis_classes = SqlRunner.run(sql)
     result = tennis_classes.map {|tennis_class| Tennisclass.new(tennis_class)}
     return result
+  end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM tennis_classes WHERE id = $1"
+    values =[id]
+    member = SqlRunner.run(sql, values)
+    return Tennisclass.new(member.first())
   end
 
   def self.delete_all()

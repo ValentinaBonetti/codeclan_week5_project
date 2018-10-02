@@ -1,0 +1,17 @@
+<h1>all my bookings</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>CLASS</th>
+    <th>COURT</th>
+    <th></th>
+  </tr>
+  <% for booking in @bookings %>
+  <tr>
+    <td><%= booking.id %></td>
+    <td><%= booking.tennis_class.name %></td>
+    <td><%=booking.court_number %></td>
+  </tr>
+  <% end %>
+</table>

@@ -51,6 +51,25 @@ class Booking
     return Member.new(member.first)
   end
 
+  def tennis_class()
+    sql = "SELECT * FROM tennis_classes
+    WHERE id = $1"
+    values = [@tennis_class_id]
+    tennis_class = SqlRunner.run(sql,values)
+    return Tennisclass.new(tennis_class.first)
+  end
+
+  def court_number()
+    sql = "SELECT * FROM courts
+    WHERE id = $1"
+    values = [@court_id]
+    court_hash = SqlRunner.run(sql,values)
+    court = Court.new(court_hash.first)
+    return court.court_number
+  end
+
+
+
 
   # Class methods
 

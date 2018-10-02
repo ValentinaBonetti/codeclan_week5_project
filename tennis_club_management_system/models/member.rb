@@ -6,7 +6,7 @@ class Member
   attr_accessor :first_name, :last_name, :membership_type, :date_of_birth, :opt_in_Wimbledon
 
   def initialize(options)
-    @id = options['if'].to_i if options['id']
+    @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
     @membership_type = options['membership_type']
@@ -60,6 +60,13 @@ class Member
     members = SqlRunner.run(sql)
     result = members.map {|member| Member.new(member)}
     return result
+  end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM members WHERE id = $1"
+    values =[id]
+    member = SqlRunner.run(sql, values)
+    return Member.new(member.first())
   end
 
   def self.delete_all()

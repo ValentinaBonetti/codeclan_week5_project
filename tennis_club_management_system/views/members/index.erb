@@ -1,16 +1,10 @@
-<h1>all the club members</h1>
+<h1>Welcome <%= @member.first_name %>!</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th>Type</th>
-  </tr>
-  <% for member in @members %>
-  <tr>
-    <td><a href="/members/<%= member.id %>"><%= member.first_name %></a></td>
-    <td>|</td>
-    <td><%= member.membership_type %></td>
-  </tr>
-  <% end %>
-</table>
+
+<div class="member_options">
+  <ul>
+    <li><a href="/members/<%= @member.id %>/classes">classes</a></li>
+    <li><a href="/members/<%= @member.id %>/courts">courts</a></li>
+    <li><a href="/members/<%= @member.id %>/bookings">my bookings</a></li>
+  </ul>
+</div>

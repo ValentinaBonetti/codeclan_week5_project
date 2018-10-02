@@ -6,7 +6,7 @@ class Coach
   attr_accessor :first_name, :last_name, :qualification, :date_of_birth
 
   def initialize(options)
-    @id = options['if'].to_i if options['id']
+    @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
     @qualification = options['qualification']

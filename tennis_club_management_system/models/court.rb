@@ -6,7 +6,7 @@ class Court
   attr_accessor :court_number
 
   def initialize(options)
-    @id = options['if'].to_i if options['id']
+    @id = options['id'].to_i if options['id']
     @court_number = options['court_number']
   end
 
@@ -48,6 +48,13 @@ class Court
         courts = SqlRunner.run(sql)
         result = courts.map {|court| Court.new(court)}
         return result
+      end
+
+      def self.find_by_id(id)
+        sql = "SELECT * FROM courts WHERE id = $1"
+        values =[id]
+        court = SqlRunner.run(sql, values)
+        return Court.new(court.first())
       end
 
       def self.delete_all()
