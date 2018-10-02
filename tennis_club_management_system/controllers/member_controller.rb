@@ -24,6 +24,21 @@ get '/members/:id/classes' do
   erb(:"members/tennis_classes")
 end
 
+get '/members/:id/courts' do
+  @member = Member.find_by_id(params[:id])
+  @courts = Court.all()
+  erb(:"members/courts")
+end
+
+get '/members/:id/post' do
+  booking = Booking.new({"member_id" => params[:id],
+     "court_id" => params[:court_id],
+     "booking_date" => params[:booking_date],
+     "booking_time" => params[:booking_time],
+     "booking_duration" => params[:booking_duration]})
+  booking.save
+end
+
 get '/members/:id/bookings' do
   @member = Member.find_by_id(params[:id])
   @mybookings = @member.my_bookings

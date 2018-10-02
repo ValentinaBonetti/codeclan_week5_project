@@ -25,6 +25,21 @@ member01 = Member.new({
 court01 = Court.new({"court_number" => 1})
 court01.save
 
+court02 = Court.new({"court_number" => 2})
+court02.save
+
+court03 = Court.new({"court_number" => 3})
+court03.save
+
+court04 = Court.new({"court_number" => 4})
+court04.save
+
+court05 = Court.new({"court_number" => 5})
+court05.save
+
+court06 = Court.new({"court_number" => 6})
+court06.save
+
 
 coach01 = Coach.new({"first_name" => "Julie",
     "last_name" => "Gordon",
