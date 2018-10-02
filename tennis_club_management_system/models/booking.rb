@@ -4,16 +4,16 @@ class Booking
 
   attr_reader :id
   attr_accessor :member_id, :tennis_class_id, :court_id,
-                :court_booking_date, :court_booking_time, :court_booking_duration
+                :booking_date, :booking_time, :booking_duration
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @member_id = options['member_id'].to_i
     @tennis_class_id = options['tennis_class_id'].to_i
     @court_id = options['court_id'].to_i
-    @court_booking_date = options['court_booking_date']
-    @court_booking_time = options['court_booking_time']
-    @court_booking_duration = options['court_booking_duration']
+    @booking_date = options['booking_date']
+    @booking_time = options['booking_time']
+    @booking_duration = options['booking_duration']
   end
 
   def save()
@@ -22,15 +22,15 @@ class Booking
       member_id,
       tennis_class_id,
       court_id,
-      court_booking_date,
-      court_booking_time,
-      court_booking_duration
+      booking_date,
+      booking_time,
+      booking_duration
     )
     VALUES
     ($1,$2,$3,$4,$5,$6)
     RETURNING id"
-    values = [@member_id,@tennis_class_id,@court_id,@court_booking_date,
-              @court_booking_time,@court_booking_duration]
+    values = [@member_id,@tennis_class_id,@court_id,@booking_date,
+              @booking_time,@booking_duration]
     booking = SqlRunner.run(sql, values)
     @id = booking.first()['id'].to_i
   end

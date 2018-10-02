@@ -26,7 +26,7 @@ end
 
 get '/members/:id/bookings' do
   @member = Member.find_by_id(params[:id])
-  @bookings = Booking.all()
+  @mybookings = @member.my_bookings
   erb(:"members/bookings")
 end
 

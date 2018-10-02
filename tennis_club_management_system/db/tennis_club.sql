@@ -42,7 +42,7 @@ CREATE TABLE bookings (
   member_id INT8 REFERENCES members(id) ON DELETE CASCADE,
   tennis_class_id INT8 REFERENCES tennis_classes(id) ON DELETE CASCADE,
   court_id INT8 REFERENCES courts(id) ON DELETE CASCADE,
-  court_booking_date DATE,
-  court_booking_time TIME,
-  court_booking_duration INTERVAL HOUR
+  booking_date DATE,
+  booking_time TIME,
+  booking_duration INTERVAL HOUR
 );

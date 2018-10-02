@@ -52,6 +52,15 @@ class Member
     SqlRunner.run(sql,values)
   end
 
+  def my_bookings()
+    sql = "SELECT b.* FROM bookings b INNER JOIN members ON b.member_id = members.id
+         WHERE members.id = $1"
+    values = [@id]
+    my_bookings_hash = SqlRunner.run(sql,values)
+    my_bookings = my_bookings_hash.map {|booking| Booking.new(booking)}
+    return my_bookings
+  end
+
 
   # class methods
 
