@@ -46,9 +46,9 @@ tennisclass01.save
 booking01 = Booking.new({"member_id" => member01.id,
    "tennis_class_id" => tennisclass01.id,
    "court_id" => court01.id,
-   "court_booking_date" => "2018-10-05",
-   "court_booking_time" => "12:00",
-   "court_booking_duration" => "2:00"})
+   "booking_date" => tennisclass01.class_date,
+   "booking_time" => tennisclass01.class_time,
+   "booking_duration" => tennisclass01.class_duration})
 booking01.save
 
 

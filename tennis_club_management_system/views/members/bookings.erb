@@ -5,6 +5,9 @@
     <th>ID</th>
     <th>CLASS</th>
     <th>COURT</th>
+    <th>DATE</th>
+    <th>TIME</th>
+    <th>DURATION</th>
     <th></th>
   </tr>
   <% for booking in @mybookings %>
@@ -12,6 +15,10 @@
     <td><%= booking.id %></td>
     <td><%= booking.tennis_class.name %></td>
     <td><%=booking.court_number %></td>
+    <td><%=booking.booking_date %></td>
+    <td><%=booking.booking_time %></td>
+    <td><%=booking.booking_duration %></td>
+
   </tr>
   <% end %>
 </table>

@@ -34,11 +34,19 @@ get '/members/:id/:tennis_class_id/:court_id/book_class' do
   @member = Member.find_by_id(params[:id])
   tennisclass = Tennisclass.find_by_id(params[:tennis_class_id])
   court = Court.find_by_id(params[:court_id])
-  booking = Booking.new({"member_id" => @member.id,
-                         "tennis_class_id" => tennisclass.id,
-                         "court_id" => court.id})
-  booking.save
-  redirect to("/members/#{@member.id}/index")
+  # check if member already booked the class:
+  if (@member.my_bookings.any? {|booking| booking.tennis_class_id == tennisclass.id})
+    redirect to("/members/#{@member.id}/index")
+  else
+    booking = Booking.new({"member_id" => @member.id,
+                           "tennis_class_id" => tennisclass.id,
+                           "court_id" => court.id,
+                           "booking_date" => tennisclass.class_date,
+                           "booking_time" => tennisclass.class_time,
+                           "booking_duration" => tennisclass.class_duration})
+    booking.save
+    redirect to("/members/#{@member.id}/index")
+  end
 end
 
 
