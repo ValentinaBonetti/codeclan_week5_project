@@ -19,7 +19,7 @@ member01 = Member.new({
   "last_name" => "Bonetti",
   "membership_type" => "student",
   "date_of_birth" => "1979-03-02",
-  "opt_in_Wimbledon" => 1 #find way to transform 1 into true automatically
+  "opt_in_wimbledon" => 1 #find way to transform 1 into true automatically
   })
   member01.save
 

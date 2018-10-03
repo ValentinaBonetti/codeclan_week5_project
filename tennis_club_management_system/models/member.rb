@@ -2,8 +2,8 @@ require_relative('../db/sql_runner')
 
 class Member
 
-  attr_reader :id
-  attr_accessor :first_name, :last_name, :membership_type, :date_of_birth, :opt_in_Wimbledon
+  attr_accessor :id
+  attr_accessor :first_name, :last_name, :membership_type, :date_of_birth, :opt_in_wimbledon
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -11,7 +11,7 @@ class Member
     @last_name = options['last_name']
     @membership_type = options['membership_type']
     @date_of_birth = options['date_of_birth']
-    @opt_in_Wimbledon = options['opt_in_Wimbledon']
+    @opt_in_wimbledon = options['opt_in_wimbledon']
   end
 
   def save()
@@ -21,12 +21,12 @@ class Member
       last_name,
       membership_type,
       date_of_birth,
-      opt_in_Wimbledon
+      opt_in_wimbledon
       )
       VALUES
       ($1,$2,$3,$4,$5)
       RETURNING *"
-    values = [@first_name,@last_name,@membership_type,@date_of_birth,@opt_in_Wimbledon]
+    values = [@first_name,@last_name,@membership_type,@date_of_birth,@opt_in_wimbledon]
     member = SqlRunner.run(sql,values)
     @id = member.first()['id'].to_i
   end
@@ -37,11 +37,11 @@ class Member
       last_name,
       membership_type,
       date_of_birth,
-      opt_in_Wimbledon)
+      opt_in_wimbledon)
       = ($1,$2,$3,$4,$5)
       WHERE id = $6"
       values = [@first_name,@last_name,
-        @membership_type,@date_of_birth,@opt_in_Wimbledon,@id]
+        @membership_type,@date_of_birth,@opt_in_wimbledon,@id]
       SqlRunner.run(sql,values)
   end
 

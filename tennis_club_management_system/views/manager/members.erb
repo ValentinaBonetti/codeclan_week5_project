@@ -1,0 +1,29 @@
+<h1>all the club members</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>|</th>
+    <th>Type</th>
+    <th>Date of birth</th>
+    <th>Wimbledon opt-in</th>
+    <th>|</th>
+    <th>Actions</th>
+    <th></th>
+
+  </tr>
+  <% for member in @members %>
+  <tr>
+    <td><%= member.first_name %></td>
+    <td><%= member.last_name %></td>
+    <td>|</td>
+    <td><%= member.membership_type %></td>
+    <td><%= member.date_of_birth %></td>
+    <td><%= member.opt_in_wimbledon %></td>
+    <td>|</td>
+    <td><a href="/manager/<%= member.id %>/edit">Edit</a></td>
+    <td><a href="/manager/<%= member.id %>/delete">Delete</a></td>
+  </tr>
+  <% end %>
+</table>

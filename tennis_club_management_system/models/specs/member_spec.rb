@@ -6,7 +6,7 @@ class TestMember < MiniTest::Test
 
   def setup
      options = {"first_name" => "Valentina", "last_name" => "Bonetti",
-       "membership_type" => "student", "date_of_birth" => "1979-03-02", "opt_in_Wimbledon" => 1}
+       "membership_type" => "student", "date_of_birth" => "1979-03-02", "opt_in_wimbledon" => 1}
 
      @member01 = Member.new(options)
   end
@@ -31,8 +31,8 @@ class TestMember < MiniTest::Test
     assert_equal("1979-03-02", result)
   end
 
-  def test_opt_in_Wimbledon()
-    result = @member01.opt_in_Wimbledon()
+  def test_opt_in_wimbledon()
+    result = @member01.opt_in_wimbledon()
     assert_equal(1, result)
   end
 
