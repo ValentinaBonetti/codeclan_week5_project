@@ -6,14 +6,18 @@
     <th>DATE</th>
     <th>TIME</th>
     <th>DURATION</th>
+    <th>COURT</th>
+    <th>COACH</th>
     <th></th>
   </tr>
   <% for tennis_class in @tennis_classes %>
   <tr>
     <td><%= tennis_class.name %></td>
     <td><%= tennis_class.class_date %></td>
-    <td><%=tennis_class.class_time %></td>
-    <td><%=tennis_class.class_duration %></td>
+    <td><%= tennis_class.class_time %></td>
+    <td><%= tennis_class.class_duration %></td>
+    <td><%= tennis_class.court_number %></td>
+    <td><%="#{tennis_class.coach.first_name} #{tennis_class.coach.last_name}"%></td>
     <td><a href="/manager/classes/<%= tennis_class.id %>/edit">edit</a></td>
   </tr>
   <% end %>

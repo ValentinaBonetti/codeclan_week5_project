@@ -50,6 +50,20 @@ coach01 = Coach.new({"first_name" => "Julie",
     })
 coach01.save
 
+coach02 = Coach.new({"first_name" => "Gordon",
+    "last_name" => "Holly",
+    "qualification" => "LTA Level 3",
+    "date_of_birth" => "1979-11-20"
+    })
+coach02.save
+
+coach03 = Coach.new({"first_name" => "Jenny",
+    "last_name" => "Camp",
+    "qualification" => "LTA Level 1",
+    "date_of_birth" => "1989-03-18"
+    })
+coach03.save
+
 
 tennisclass01 = Tennisclass.new({"name" => "Cardio tennis",
     "class_date" => "2018-10-29",
@@ -58,6 +72,22 @@ tennisclass01 = Tennisclass.new({"name" => "Cardio tennis",
     "court_id" => court01.id,
     "coach_id" => coach01.id})
 tennisclass01.save
+
+tennisclass02 = Tennisclass.new({"name" => "Adult beginners",
+    "class_date" => "2018-10-15",
+    "class_time" => "18:00",
+    "class_duration" => "2:00",
+    "court_id" => court02.id,
+    "coach_id" => coach03.id})
+tennisclass02.save
+
+tennisclass03 = Tennisclass.new({"name" => "Team training",
+    "class_date" => "2018-10-17",
+    "class_time" => "20:00",
+    "class_duration" => "1:30",
+    "court_id" => court05.id,
+    "coach_id" => coach02.id})
+tennisclass03.save
 
 
 booking01 = Booking.new({"member_id" => member01.id,
@@ -68,13 +98,22 @@ booking01 = Booking.new({"member_id" => member01.id,
    "booking_duration" => tennisclass01.class_duration})
 booking01.save
 
+booking02 = Booking.new({"member_id" => member01.id,
+   "tennis_class_id" => tennisclass02.id,
+   "court_id" => tennisclass02.court_id,
+   "booking_date" => "2018-10-23",
+   "booking_time" => "17:30",
+   "booking_duration" => "1:00"})
+booking02.save
+
 courtbooking01 = Courtbooking.new({"member_id" => member01.id,
-   "tennis_class_id" => tennisclass01.id,
    "court_id" => court01.id,
    "booking_date" => tennisclass01.class_date,
    "booking_time" => tennisclass01.class_time,
    "booking_duration" => tennisclass01.class_duration})
 courtbooking01.save
+
+
 
 binding.pry
 nil

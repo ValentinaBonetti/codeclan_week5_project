@@ -1,3 +1,5 @@
+<h1>edit tennis class</h1>
+
 <form class="edit_tennis_class" action="/manager/classes/<%=@tennis_class.id%>/update" method="post">
   <label for="name">Class name:</label>
   <input id="name" type="text" name="name" value="<%=@tennis_class.name%>" />
@@ -18,12 +20,10 @@
 
 
 
-
-
   <label for="court-select">Court:</label>
   <select name="court_id" id="court-select">
     <% for court in @courts %>
-    <option value="<%=court.id %>" ><%=court.court_number %></option>
+      <option value="<%=court.id %>" ><%=court.court_number %></option>
     <%end %>
   </select>
 
@@ -31,7 +31,7 @@
     <label for="coach-select">Coach:</label>
     <select name="coach_id" id="coach-select">
       <% for coach in @coaches %>
-      <option value="<%=coach.id %>" ><%="#{coach.first_name} #{coach.last_name}" %></option>
+        <option value="<%=coach.id %>" ><%="#{coach.first_name} #{coach.last_name}" %></option>
       <%end %>
     </select>
 
