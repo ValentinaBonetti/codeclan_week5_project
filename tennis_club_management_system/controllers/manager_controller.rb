@@ -47,3 +47,27 @@ post '/manager/:id/update' do
   # @updatedmember.save
   redirect to("/manager/memberships")
 end
+
+get '/manager/classes' do
+  @tennis_classes = Tennisclass.all()
+  erb (:"/manager/tennis_classes")
+end
+
+get '/manager/classes/:tennis_class_id/edit' do
+  @tennis_class = Tennisclass.find_by_id(params[:tennis_class_id])
+  @coaches = Coach.all()
+  @courts = Court.all()
+  erb (:"/manager/edit_tennis_class")
+end
+
+post '/manager/classes/:tennis_class_id/update' do
+  @tennisclass = Tennisclass.find_by_id(params[:tennis_class_id])
+  @tennisclass.name = params[:name]
+  @tennisclass.class_date = params[:class_date]
+  @tennisclass.class_time = params[:time]
+  @tennisclass.class_duration = params[:duration]
+  @tennisclass.court_id = params[:court_id]
+  @tennisclass.coach_id = params[:coach_id]
+  @tennisclass.update
+  redirect to("/manager/classes")
+end

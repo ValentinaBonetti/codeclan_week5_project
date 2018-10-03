@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Member
 
-  attr_accessor :id
+  attr_reader :id
   attr_accessor :first_name, :last_name, :membership_type, :date_of_birth, :opt_in_wimbledon
 
   def initialize(options)

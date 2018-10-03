@@ -1,0 +1,41 @@
+<form class="edit_tennis_class" action="/manager/classes/<%=@tennis_class.id%>/update" method="post">
+  <label for="name">Class name:</label>
+  <input id="name" type="text" name="name" value="<%=@tennis_class.name%>" />
+
+  <label for="class_date">Date:</label>
+  <input id="class_date" type="date" name="class_date" value="<%=@tennis_class.class_date%>" />
+
+  <label for="class_time">Time:</label>
+  <input id="class_time" type="time" name="class_time" value="<%=@tennis_class.class_time%>" />
+
+  <label for="class_duration">Duration:</label>
+  <select id="class_duration" name="class_duration">
+    <option value="00:30" >30 minutes</option>
+    <option selected value="1:00" >1 hour</option>
+    <option value="1:30" >1.5 hours</option>
+    <option value="2:00" >2 hours</option>
+  </select>
+
+
+
+
+
+  <label for="court-select">Court:</label>
+  <select name="court_id" id="court-select">
+    <% for court in @courts %>
+    <option value="<%=court.id %>" ><%=court.court_number %></option>
+    <%end %>
+  </select>
+
+
+    <label for="coach-select">Coach:</label>
+    <select name="coach_id" id="coach-select">
+      <% for coach in @coaches %>
+      <option value="<%=coach.id %>" ><%="#{coach.first_name} #{coach.last_name}" %></option>
+      <%end %>
+    </select>
+
+
+  <input type="submit" value="update"/>
+
+</form>

@@ -68,8 +68,8 @@ class Tennisclass
   def self.find_by_id(id)
     sql = "SELECT * FROM tennis_classes WHERE id = $1"
     values =[id]
-    member = SqlRunner.run(sql, values)
-    return Tennisclass.new(member.first())
+    tennisclass = SqlRunner.run(sql, values)
+    return Tennisclass.new(tennisclass.first())
   end
 
   def self.delete_all()
