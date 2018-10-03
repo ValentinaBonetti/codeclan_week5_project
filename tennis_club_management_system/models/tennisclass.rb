@@ -55,6 +55,26 @@ class Tennisclass
       SqlRunner.run(sql,values)
     end
 
+# here
+    # def members_coming()
+    #   sql = "SELECT member_id FROM class_bookings
+    #   WHERE id = $1"
+    #   values = [@id]
+    #   members_id_hash = SqlRunner.run(sql,values)
+    #   members_coming = members_id_hash.map{|member_id| Member.find_by_id(member_id["id"])}
+    #   return members_coming
+    # end
+
+    def members_coming()
+      sql = "SELECT * FROM
+             class_bookings INNER JOIN members
+             ON class_bookings.member_id = members.id
+             WHERE class_bookings.id = $1"
+      values = [@id]
+      members_coming_hash = SqlRunner.run(sql,values)
+      members_coming_array = members_coming_hash.map{|member| Member.new(member)}
+      return members_coming_array
+    end
 
 
     def court_number()

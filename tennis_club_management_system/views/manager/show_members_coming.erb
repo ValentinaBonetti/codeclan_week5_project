@@ -1,0 +1,14 @@
+<h1>all the members coming to the class <%= @tennisclass.name %></h1>
+
+<table>
+  <tr>
+    <th>NAME</th>
+    <th>SURNAME</th>
+  </tr>
+  <% for member in @members_coming %>
+  <tr>
+    <td><%= member.first_name %></td>
+    <td><%= member.last_name %></td>
+  </tr>
+  <% end %>
+</table>

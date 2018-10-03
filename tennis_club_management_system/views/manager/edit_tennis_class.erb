@@ -28,12 +28,12 @@
   </select>
 
 
-    <label for="coach-select">Coach:</label>
-    <select name="coach_id" id="coach-select">
-      <% for coach in @coaches %>
-        <option value="<%=coach.id %>" ><%="#{coach.first_name} #{coach.last_name}" %></option>
-      <%end %>
-    </select>
+  <label for="coach-select">Coach:</label>
+  <select name="coach_id" id="coach-select">
+    <% for coach in @coaches %>
+      <option value="<%=coach.id %>" ><%="#{coach.first_name} #{coach.last_name}" %></option>
+    <%end %>
+  </select>
 
 
   <input type="submit" value="update"/>

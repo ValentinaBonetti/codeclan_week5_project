@@ -60,6 +60,12 @@ get '/manager/classes/:id/edit' do
   erb (:"/manager/edit_tennis_class")
 end
 
+get '/manager/classes/:id/bookings' do
+  @tennisclass = Tennisclass.find_by_id(params[:id])
+  @members_coming = @tennisclass.members_coming
+  erb (:"/manager/show_members_coming")
+end
+
 post '/manager/classes/:id/update' do
   @tennisclass = Tennisclass.find_by_id(params[:id])
   @tennisclass.name = params[:name]

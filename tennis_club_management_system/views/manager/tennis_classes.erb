@@ -8,6 +8,7 @@
     <th>DURATION</th>
     <th>COURT</th>
     <th>COACH</th>
+    <th>ACTIONS</th>
     <th></th>
   </tr>
   <% for tennis_class in @tennis_classes %>
@@ -18,6 +19,7 @@
     <td><%= tennis_class.class_duration %></td>
     <td><%= tennis_class.court_number %></td>
     <td><%="#{tennis_class.coach.first_name} #{tennis_class.coach.last_name}"%></td>
+    <td><a href="/manager/classes/<%= tennis_class.id %>/bookings">bookings</a></td>
     <td><a href="/manager/classes/<%= tennis_class.id %>/edit">edit</a></td>
   </tr>
   <% end %>
