@@ -54,16 +54,7 @@ class Tennisclass
       values = [@id]
       SqlRunner.run(sql,values)
     end
-
-# here
-    # def members_coming()
-    #   sql = "SELECT member_id FROM class_bookings
-    #   WHERE id = $1"
-    #   values = [@id]
-    #   members_id_hash = SqlRunner.run(sql,values)
-    #   members_coming = members_id_hash.map{|member_id| Member.find_by_id(member_id["id"])}
-    #   return members_coming
-    # end
+    
 
     def members_coming()
       sql = "SELECT * FROM

@@ -53,6 +53,18 @@ get '/manager/classes' do
   erb (:"/manager/tennis_classes")
 end
 
+get '/manager/classes/new' do
+  @coaches = Coach.all()
+  @courts = Court.all()
+  erb (:"/manager/create_tennis_class")
+end
+
+post '/manager/classes/create' do
+  @tennisclass = Tennisclass.new(params)
+  @tennisclass.save
+  redirect to("/manager/classes")
+end
+
 get '/manager/classes/:id/edit' do
   @tennis_class = Tennisclass.find_by_id(params[:id])
   @coaches = Coach.all()
