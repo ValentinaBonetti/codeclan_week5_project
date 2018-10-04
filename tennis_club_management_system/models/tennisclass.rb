@@ -54,13 +54,13 @@ class Tennisclass
       values = [@id]
       SqlRunner.run(sql,values)
     end
-    
+
 
     def members_coming()
-      sql = "SELECT * FROM
+      sql = "SELECT members.* FROM
              class_bookings INNER JOIN members
              ON class_bookings.member_id = members.id
-             WHERE class_bookings.id = $1"
+             WHERE tennis_class_id = $1"
       values = [@id]
       members_coming_hash = SqlRunner.run(sql,values)
       members_coming_array = members_coming_hash.map{|member| Member.new(member)}

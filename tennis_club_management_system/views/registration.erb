@@ -1,29 +1,40 @@
 
 <form class="registration" action="/register/:id/create" method="post">
-  <label for="first_name">First name:</label>
-  <input id="first_name" type="text" name="first_name"/>
+  <div class="field">
+    <label for="first_name">First name:</label>
+    <input id="first_name" type="text" name="first_name"/>
+  </div>
 
+  <div class="field">
   <label for="last_name">Last name:</label>
   <input id="last_name" type="text" name="last_name"/>
+  </div>
 
+  <div class="field">
   <label for="membership_type">Membership type:</label>
   <select id="membership-select" name="membership_type">
     <option selected value="full">Full</option>
     <option value="junior">Junior</option>
     <option value="student">Student</option>
   </select>
+  </div>
 
+  <div class="field">
   <label for="date_of_birth">Date of birth: </label>
   <input id="date_of_birth" type="date" name="date_of_birth"/>
+  </div>
 
+  <div class="field">
   <label for="opt_in_wimbledon">Wimbledon ballot:</label>
   <select id="opt_in_wimbledon" name="opt_in_wimbledon">
     <option selected value=1>opt in</option>
     <option value=0>opt out</option>
     <option value=0>decide later</option>
   </select>
+  </div>
 
-
+  <div class="field">
   <input type="submit" value="register"/>
+  </div>
 
 </form>

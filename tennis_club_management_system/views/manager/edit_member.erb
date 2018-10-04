@@ -1,28 +1,40 @@
 <form class="edit_member" action="/manager/<%=@member.id%>/update" method="post">
+
+  <div class="field">
   <label for="first_name">First name:</label>
   <input id="first_name" type="text" name="first_name" value="<%=@member.first_name%>" />
+  </div>
 
+  <div class="field">
   <label for="last_name">Last name:</label>
   <input id="last_name" type="text" name="last_name" value="<%=@member.last_name%>" />
+  </div>
 
+  <div class="field">
   <label for="membership_type">Membership type:</label>
   <select id="membership-select" name="membership_type">
     <option value="full" <%="selected" if @member.membership_type == "full" %>>Full</option>
     <option value="junior" <%="selected" if @member.membership_type == "junior" %>>Junior</option>
     <option value="student" <%="selected" if @member.membership_type == "student" %>>Student</option>
   </select>
+  </div>
 
+  <div class="field">
   <label for="date_of_birth">Date of birth: </label>
   <input id="date_of_birth" type="date" name="date_of_birth" value="<%=@member.date_of_birth%>" />
+  </div>
 
+  <div class="field">
   <label for="opt_in_wimbledon">Wimbledon ballot:</label>
   <select id="opt_in_wimbledon" name="opt_in_wimbledon">
     <option value=1 <%="selected" if @member.opt_in_wimbledon == 1 %>>opt in</option>
     <option value=0 <%="selected" if @member.opt_in_wimbledon == 0 %>>opt out</option>
     <option value=0>decide later</option>
   </select>
+  </div>
 
-
+  <div class="field">
   <input type="submit" value="update"/>
-
+  </div>
+  
 </form>

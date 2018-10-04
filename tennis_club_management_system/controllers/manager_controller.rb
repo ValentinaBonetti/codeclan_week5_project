@@ -35,16 +35,8 @@ end
 
 # edit member - receive the info from the form:
 post '/manager/:id/update' do
-  @member = Member.find_by_id(params[:id])
-  @member.first_name = params[:first_name]
-  @member.last_name = params[:last_name]
-  @member.membership_type = params[:membership_type]
-  @member.date_of_birth = params[:date_of_birth]
-  @member.opt_in_wimbledon = params[:opt_in_wimbledon]
-  @member.update
-  # understand why the following is not working:
-  # @updatedmember = Member.new(params)
-  # @updatedmember.save
+   @updatedmember = Member.new(params)
+   @updatedmember.update
   redirect to("/manager/memberships")
 end
 

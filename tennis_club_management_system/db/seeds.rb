@@ -23,6 +23,24 @@ member01 = Member.new({
   })
   member01.save
 
+  member02 = Member.new({
+    "first_name" => "Jack",
+    "last_name" => "Sinatra",
+    "membership_type" => "full",
+    "date_of_birth" => "1968-07-12",
+    "opt_in_wimbledon" => 1 #find way to transform 1 into true automatically
+    })
+  member02.save
+
+  member03 = Member.new({
+    "first_name" => "Josh",
+    "last_name" => "Mungo",
+    "membership_type" => "junior",
+    "date_of_birth" => "2008-09-06",
+    "opt_in_wimbledon" => 0 #find way to transform 1 into true automatically
+    })
+  member03.save
+
 
 court01 = Court.new({"court_number" => 1})
 court01.save
@@ -92,7 +110,7 @@ tennisclass03.save
 
 booking01 = Booking.new({"member_id" => member01.id,
    "tennis_class_id" => tennisclass01.id,
-   "court_id" => court01.id,
+   "court_id" => tennisclass01.court_id,
    "booking_date" => tennisclass01.class_date,
    "booking_time" => tennisclass01.class_time,
    "booking_duration" => tennisclass01.class_duration})

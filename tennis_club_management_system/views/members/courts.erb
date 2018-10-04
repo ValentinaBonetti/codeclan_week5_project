@@ -3,16 +3,28 @@
 
 
 <form action="post" action="/members/<%= @member.id %>/book_court">
+
+  <div class="field">
   <label for="court">Court: </label>
   <select name="court_id" id="court_select">
     <% for court in @courts %>
     <option value="<%=court.id %>" ><%=court.court_number %></option>
     <%end %>
   </select>
+  </div>
+
+
+  <div class="field">
   <label for="booking_date">Date: </label>
   <input id="booking_date" type="date" name="booking_date" />
+  </div>
+
+  <div class="field">
   <label for="booking_time">Time: </label>
   <input id="booking_time" type="time" name="booking_time" />
+  </div>
+
+  <div class="field">
   <label for="booking_duration">Duration: </label>
   <select id="booking_duration" name="booking_duration">
     <option value="00:30" >30 minutes</option>
@@ -20,5 +32,10 @@
     <option value="1:30" >1.5 hours</option>
     <option value="2:00" >2 hours</option>
   </select>
+  </div>
+
+  <div class="field">
   <input type="submit" value="book"/>
+  </div>
+
 </form>

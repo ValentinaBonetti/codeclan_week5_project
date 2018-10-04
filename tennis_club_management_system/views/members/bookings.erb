@@ -1,6 +1,8 @@
 <h1>all my bookings</h1>
 
-<table>
+<h4>CLASSES</h4>
+<div id="member_class_bookings_table">
+<table >
   <tr>
     <th>ID</th>
     <th>CLASS</th>
@@ -18,11 +20,13 @@
     <td><%=booking.booking_date %></td>
     <td><%=booking.booking_time %></td>
     <td><%=booking.booking_duration %></td>
-
   </tr>
   <% end %>
 </table>
+</div>
 
+<h4>COURT BOOKINGS</h4>
+<div id="member_court_bookings_table">
 
 <table>
   <tr>
@@ -44,3 +48,4 @@
   </tr>
   <% end %>
 </table>
+</div>
